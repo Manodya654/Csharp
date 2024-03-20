@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab02Q4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Product product1 = new Product("Laptop", 1000.99);
+            Product product2 = new Product("Mobile Phone", 500.99);
+
+            Console.WriteLine("Product Details:");
+            Console.WriteLine($"Product Name: {product1.ProductName}, Price: ${product1.Price}");
+            Console.WriteLine($"Product Name: {product2.ProductName}, Price: ${product2.Price}");
+
+            Console.ReadLine();
+        }
+    }
+    class Product
+    {
+        public string ProductName { get; }
+        public double Price { get; }
+
+        public Product(string productName, double price)
+        {
+            ProductName = productName;
+            Price = price;
+        }
+    }
+}
