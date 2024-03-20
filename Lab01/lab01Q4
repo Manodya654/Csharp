@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab01_04
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the number: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Fibonacci Series: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(Fibonacci(i) + " ");
+            }
+
+            Console.ReadLine();
+        }
+
+        static int Fibonacci(int n)
+        {
+            if (n <= 1)
+                return n;
+            else
+                return Fibonacci(n - 1) + Fibonacci(n - 2);
+        }
+    }
+}
+
