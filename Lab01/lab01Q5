@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab01__05
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.Write("Enter your name ");
+            String Name = Console.ReadLine();
+            Console.Write("Enter your marks ");
+            int Marks = int.Parse(Console.ReadLine());
+
+            if (int.TryParse(Console.ReadLine(), out int marks) || marks < 0 || marks > 100)
+            {
+                Console.WriteLine("Invalid input! Marks must be between 0 and 100.");
+            }
+
+            String Grade = getGrades(Marks);
+
+            Console.WriteLine($"Student Name: {Name}");
+            Console.WriteLine($"Grade: {Grade}");
+
+            Console.ReadLine();
+        }
+
+        static String getGrades(int Marks)
+        {
+            if (Marks >= 75 && Marks <= 100)
+                return "A";
+            else if (Marks >= 60 && Marks <= 74)
+                return "B";
+            else if (Marks >= 50 && Marks <= 59)
+                return "C";
+            else if (Marks >= 40 && Marks <= 49)
+                return "D";
+            else
+                return "F";
+        }
+    }
+}
