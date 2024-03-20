@@ -4,31 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab01
+namespace Lab01_02
 {
     class Program
     {
         static void Main(string[] args)
         {
+            for (int i= 0; i<=10; i++)
+            {
+                Console.Write($"Enter a number - ");
+                int no = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Calculate Area of the Rectangle");
+                String Result;
+                if (IsEven(no))
+                {
+                    Result = "Even";
+                }
+                else
+                {
+                    Result = "Odd";
+                }
 
-            Console.WriteLine("Enter the length = ");
-            double length = double.Parse(Console.ReadLine());
+                Console.WriteLine($"{no} is a {Result} number");
 
-            Console.WriteLine("Enter the width = ");
-            double width = double.Parse(Console.ReadLine());
-
-            double Area = CalculateArea(length, width);
-
-            Console.WriteLine($"Area of the Rectangle is {Area}");
-
-            Console.ReadLine();
+                Console.ReadLine();
+            }
         }
 
-        static double CalculateArea(double length, double width)
+        static bool IsEven(int no)
         {
-            return length * width;
+            return no % 2 == 0;
         }
     }
 }
