@@ -1,0 +1,41 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Enter a positive integer ");
+        string input = Console.ReadLine();
+
+        int number;
+
+        if (int.TryParse(input, out number))
+        {
+            if (number >= 0)
+            {
+                int sum = CalculateSum(number);
+                Console.WriteLine($"The sum the numbers from 1 to {number} is {sum}");
+            }
+            else
+            {
+                Console.WriteLine("ERROR");
+            }
+        }
+        else
+        {
+            Console.WriteLine("ERROR");
+        }
+
+        Console.ReadLine();
+    }
+
+    static int CalculateSum(int n)
+    {
+        int sum = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+        }
+        return sum;
+    }
+}
