@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SimpleBankAccount
+{
+    class BankAccount
+    {
+        public string AccountNumber { get; }
+        public double Balance { get; private set; }
+
+        public BankAccount(string accountNumber, double initialBalance)
+        {
+            AccountNumber = accountNumber;
+            Balance = initialBalance;
+        }
+
+        public void Deposit(double amount)
+        {
+            if (amount > 0)
+            {
+                Balance += amount;
+                Console.WriteLine($"Deposit of ${amount} successful. Updated balance: ${Balance}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid deposit amount. Please enter a positive value.");
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BankAccount account = new BankAccount("123456789", 1000.00);
+
+            Console.Write("Enter the amount to deposit: ");
+            double depositAmount = Convert.ToDouble(Console.ReadLine());
+            account.Deposit(depositAmount);
+
+            Console.ReadLine();
+        }
+    }
+}
+
